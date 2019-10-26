@@ -64,5 +64,5 @@
             // 9. Test Route Working
             // 10. Set app to listen. 
 
-//--Oct 26, // 1. Create a Heroku app in your project directory.
+//--Oct 26, // 1. Create a Heroku app in project directory.
             // 2. ran 'heroku addons create mongolab -asodo-m'
