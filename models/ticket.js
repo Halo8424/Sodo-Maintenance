@@ -4,7 +4,7 @@
 
     const ticketSchema = new Schema({
         title: { type: String, required: true},
-        manager: { type: String, required: true};
+        manager: { type: String, required: true},
         note: String,
         date: { type: Date, default: Date.now}
     });

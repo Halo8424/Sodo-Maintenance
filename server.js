@@ -24,7 +24,7 @@
         app.use(express.static("public"));
 
     //--Connect to the MongoDB
-        //let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/( Database Name)"; //<--remove parenthesis
+        //let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/sodo_db"; //<--remove parenthesis
 
     //--Calling the connection
         //mongoose.connect(MONGODB_URI);
@@ -76,3 +76,4 @@
 
 //--Oct 29, // 1. Created React app called "client". 
             // 2. Shortened ticket Schema in ticket.js
+            // 3. Created seedDB.js file 
