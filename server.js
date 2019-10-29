@@ -74,3 +74,4 @@
             // 4. Refactor server.js 
             // 5. npm i "if-env" & "axios"
             // 6. boiler plate routes => index.js
+            // 7. api => index.js set up router.
