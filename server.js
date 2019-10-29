@@ -79,6 +79,7 @@
             // 9. boiler plate api => tickets.js
             // 10. Seeded database
             // 11. Created folders in src: components, pages, utils. files: App.js, index.js
+            // 12. Created API.js in utils folder
             
 
     //**** Left off: 
