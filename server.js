@@ -66,3 +66,10 @@
 
 //--Oct 26, // 1. Create a Heroku app in project directory.
             // 2. ran 'heroku addons create mongolab -asodo-m'
+
+//--Oct 28, // 1. Created models folder.
+            // 2. Created ticket.js & created 1st ticketSchema.
+            // 3. created index.js "exported module". 
+            // 4. variable "db" to refference models folder.
+            // * Get all Ticket Route not working. "Ta" assistence - created a seeds.js file
+            //   Route worked, but no explination on what was wrong. (restructer to model class activity)

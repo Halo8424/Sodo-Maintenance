@@ -1,0 +1,25 @@
+{
+  "name": "final-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.7.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Halo8424/Final-project.git"
+  },
+  "author": "Richard Conde , Luis Dominguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Halo8424/Final-project/issues"
+  },
+  "homepage": "https://github.com/Halo8424/Final-project#readme"
+}
