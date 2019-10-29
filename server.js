@@ -7,12 +7,13 @@
     //--Dependencies
         const express = require('express');
         const mongoose = require('mongoose');
+        const routes = require("./routes");
 
     //--Using Express
         const app = express();
 
     //--Remote Mongodb database PORT connection or localhost Port connection
-        const PORT = process.env.PORT || 3000;
+        const PORT = process.env.PORT || 3001;
 
 
     //--Configure middleware
@@ -20,29 +21,20 @@
         app.use(express.urlencoded({ extended: true }));
         app.use(express.json());
 
+    //--Serve up static assets (usually on heroku)
+        if (process.env.NODE_ENV === "production") {
+            app.use(express.static("client/build"));
+            }
+
     //--Set up a static folder (public) for our web app
-        app.use(express.static("public"));
+       // app.use(express.static("public"));
 
     //--Connect to the MongoDB
-        //let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/sodo_db"; //<--remove parenthesis
-
-    //--Calling the connection
-        //mongoose.connect(MONGODB_URI);
-
-
-    //--Test Route
-        app.get("/", function(req, res) {
-        res.send("Hello world");
-        });
-
-
-
-
-
+        mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sodo_db");
 
     //--Set the app to listen on port 3000
         app.listen(PORT, function() {
-        console.log("App running on port 3000!");
+        console.log(`Server listening on PORT ${PORT}!`);
         });
 
 
@@ -77,3 +69,4 @@
 //--Oct 29, // 1. Created React app called "client". 
             // 2. Shortened ticket Schema in ticket.js
             // 3. Created seedDB.js file 
+            // 4. Refactor server.js 
