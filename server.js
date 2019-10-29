@@ -75,3 +75,5 @@
             // 5. npm i "if-env" & "axios"
             // 6. boiler plate routes => index.js
             // 7. api => index.js set up router.
+            // 8. boiler plate ticketsController.js file 
+            // 9. boiler plate api => tickets.js
