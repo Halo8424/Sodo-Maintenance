@@ -77,3 +77,5 @@
             // 7. api => index.js set up router.
             // 8. boiler plate ticketsController.js file 
             // 9. boiler plate api => tickets.js
+
+    //**** Left off: Figure out how run seedDB database
