@@ -29,6 +29,8 @@
     //--Set up a static folder (public) for our web app
        // app.use(express.static("public"));
 
+    //--Routes
+        app.use(routes);
     //--Connect to the MongoDB
         mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sodo_db");
 
@@ -70,4 +72,5 @@
             // 2. Shortened ticket Schema in ticket.js
             // 3. Created seedDB.js file 
             // 4. Refactor server.js 
-            // 5 npm i "if-env" & "axios"
+            // 5. npm i "if-env" & "axios"
+            // 6. boiler plate routes => index.js
