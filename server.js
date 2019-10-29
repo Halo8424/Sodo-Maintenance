@@ -70,3 +70,4 @@
             // 2. Shortened ticket Schema in ticket.js
             // 3. Created seedDB.js file 
             // 4. Refactor server.js 
+            // 5 npm i "if-env" & "axios"
