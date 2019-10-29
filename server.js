@@ -73,3 +73,6 @@
             // 4. variable "db" to refference models folder.
             // * Get all Ticket Route not working. "Ta" assistence - created a seeds.js file
             //   Route worked, but no explination on what was wrong. (restructer to model class activity)
+
+//--Oct 29, // 1. Created React app called "client". 
+            // 2. Shortened ticket Schema in ticket.js
