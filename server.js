@@ -80,6 +80,7 @@
             // 10. Seeded database
             // 11. Created folders in src: components, pages, utils. files: App.js, index.js
             // 12. Created API.js in utils folder
+            // 13. Tested "GET" api routes with PostMan. 
             
 
-    //**** Left off: 
+    //**** Left off: Create first page js file. 
