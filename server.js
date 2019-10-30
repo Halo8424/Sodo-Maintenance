@@ -7,12 +7,13 @@
     //--Dependencies
         const express = require('express');
         const mongoose = require('mongoose');
+        const routes = require("./routes");
 
     //--Using Express
         const app = express();
 
     //--Remote Mongodb database PORT connection or localhost Port connection
-        const PORT = process.env.PORT || 3000;
+        const PORT = process.env.PORT || 3001;
 
 
     //--Configure middleware
@@ -20,29 +21,22 @@
         app.use(express.urlencoded({ extended: true }));
         app.use(express.json());
 
+    //--Serve up static assets (usually on heroku)
+        if (process.env.NODE_ENV === "production") {
+            app.use(express.static("client/build"));
+            }
+
     //--Set up a static folder (public) for our web app
-        app.use(express.static("public"));
+       // app.use(express.static("public"));
 
+    //--Routes
+        app.use(routes);
     //--Connect to the MongoDB
-        //let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/( Database Name)"; //<--remove parenthesis
-
-    //--Calling the connection
-        //mongoose.connect(MONGODB_URI);
-
-
-    //--Test Route
-        app.get("/", function(req, res) {
-        res.send("Hello world");
-        });
-
-
-
-
-
+        mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sodo_db");
 
     //--Set the app to listen on port 3000
         app.listen(PORT, function() {
-        console.log("App running on port 3000!");
+        console.log(`Server listening on PORT ${PORT}!`);
         });
 
 
@@ -66,3 +60,27 @@
 
 //--Oct 26, // 1. Create a Heroku app in project directory.
             // 2. ran 'heroku addons create mongolab -asodo-m'
+
+//--Oct 28, // 1. Created models folder.
+            // 2. Created ticket.js & created 1st ticketSchema.
+            // 3. created index.js "exported module". 
+            // 4. variable "db" to refference models folder.
+            // * Get all Ticket Route not working. "Ta" assistence - created a seeds.js file
+            //   Route worked, but no explination on what was wrong. (restructer to model class activity)
+
+//--Oct 29, // 1. Created React app called "client". 
+            // 2. Shortened ticket Schema in ticket.js
+            // 3. Created seedDB.js file 
+            // 4. Refactor server.js 
+            // 5. npm i "if-env" & "axios"
+            // 6. boiler plate routes => index.js
+            // 7. api => index.js set up router.
+            // 8. boiler plate ticketsController.js file 
+            // 9. boiler plate api => tickets.js
+            // 10. Seeded database
+            // 11. Created folders in src: components, pages, utils. files: App.js, index.js
+            // 12. Created API.js in utils folder
+            // 13. Tested "GET" api routes with PostMan. 
+            
+
+    //**** Left off: Create first page js file. 
