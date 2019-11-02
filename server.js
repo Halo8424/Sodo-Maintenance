@@ -83,4 +83,5 @@
             // 13. Tested "GET" api routes with PostMan. 
             
 
-    //**** Left off: Create first page js file. 
+//--Nov 02, // 1. Created DeleteBtn Component.
+            // 2. 
