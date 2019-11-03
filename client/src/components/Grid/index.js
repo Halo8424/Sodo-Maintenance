@@ -1,5 +1,4 @@
-3034
-import Reach from "react";
+import React from "react";
 
 //--Container component
     export function Container({ fluid, children}) {
