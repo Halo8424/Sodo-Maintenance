@@ -88,4 +88,5 @@
             // 3. form component boiler plate.
     
 //--Nov 03, // 1. Jumbotron Component "bp"
-            // 2. 
+            // 2. List Component Done
+            // 3. 
