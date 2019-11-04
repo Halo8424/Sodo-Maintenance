@@ -68,19 +68,19 @@ import { Input, TextArea, FormBtn } from "../components/Form";
                             <form>
                                 <Input
                                 value={this.state.title}
-                                onchange={this.handleInputChange}
+                                onChange={this.handleInputChange}
                                 name="title"
                                 placeholder="Title (broken Oven)"
                                 />
                                 <Input
                                 value={this.state.manager}
-                                onchange={this.handleInputChange}
+                                onChange={this.handleInputChange}
                                 name="manager"
                                 placeholder="Manager Name (required)"
                                 />
                                 <TextArea
                                 value={this.state.note}
-                                onchange={this.handleInputChange}
+                                onChange={this.handleInputChange}
                                 name="note"
                                 placeholder="Description"
                                 />

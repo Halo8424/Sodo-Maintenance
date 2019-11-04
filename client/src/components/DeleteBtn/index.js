@@ -8,9 +8,9 @@ import "./style.css";
 //--DeleteBtn Component
     function DeleteBtn(props){
         return(
-            <spand className="delte-btn" {...props} role="button" tabIndex="0"> 
-            X
-            </spand>
+            <span className="delte-btn" {...props} role="button" tabIndex="0"> 
+              x
+            </span>
         );
         
     }

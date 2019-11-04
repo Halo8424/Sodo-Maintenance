@@ -40,7 +40,7 @@ import API from "../utils/API";
                 </Row>
                 <Row>
                     <Col size="md-2">
-                        <Link to="/"><- Back to Open Tickets</Link>
+                        <Link to="/">Back to Open Tickets</Link>
                     </Col>
                 </Row>
             </Container>
