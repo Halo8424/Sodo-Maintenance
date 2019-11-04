@@ -83,4 +83,10 @@
             // 13. Tested "GET" api routes with PostMan. 
             
 
-    //**** Left off: Create first page js file. 
+//--Nov 02, // 1. Created DeleteBtn Component.
+            // 2. boiler plate style.css
+            // 3. form component boiler plate.
+    
+//--Nov 03, // 1. Jumbotron Component "bp"
+            // 2. List Component Done
+            // 3. 
