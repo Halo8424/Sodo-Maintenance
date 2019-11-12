@@ -1,36 +1,32 @@
 {
-  "name": "final-project",
+  "name": "disneyunitedway-mern",
   "version": "1.0.0",
-  "description": "",
+  "description": "Disney United Way Cast Donation Portal",
   "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Richard G. Scates",
+  "license": "ISC",
   "dependencies": {
     "axios": "^0.19.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "concurrently": "^4.1.1",
     "express": "^4.17.1",
-    "if-env": "^1.0.4",
-    "mongoose": "^5.7.7"
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.14",
+    "mongoose": "^5.6.4",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^11.1.0"
   },
   "devDependencies": {
-    "concurrently": "^4.1.0",
-    "nodemon": "^1.18.7"
-  },
-  "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "seed": "node scripts/seedDB.js",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Halo8424/Final-project.git"
-  },
-  "author": "Richard Conde , Luis Dominguez",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Halo8424/Final-project/issues"
-  },
-  "homepage": "https://github.com/Halo8424/Final-project#readme"
+    "nodemon": "^1.19.1"
+  }
 }

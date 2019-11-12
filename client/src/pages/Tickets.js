@@ -58,7 +58,9 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 
     //--Render Ticket class component
         render(){
+            
             return(
+                <div className="container">
                 <Container fluid>
                     <Row>
                         <Col size="md-6">
@@ -115,6 +117,7 @@ import { Input, TextArea, FormBtn } from "../components/Form";
                         </Col>
                     </Row>
                 </Container>
+                </div>
             );
         }
     } //--closing component tab
