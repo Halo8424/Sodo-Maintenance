@@ -9,7 +9,7 @@ import "./style.css";
     function DeleteBtn(props){
         return(
             <span className="delte-btn" {...props} role="button" tabIndex="0"> 
-              x
+             <i className="material-icons"> remove_circle</i>
             </span>
         );
         
