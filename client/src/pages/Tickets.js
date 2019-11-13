@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import { connect } from 'react-redux';
 
 //--Tickets Extended Component
     class Tickets extends Component {
@@ -13,7 +14,7 @@ import { Input, TextArea, FormBtn } from "../components/Form";
         state={
             tickets: [],
             title: "",
-            manager: "",
+            manager: "Manager " + this.props.auth.user.name,
             note: ""
         };
 
@@ -25,7 +26,7 @@ import { Input, TextArea, FormBtn } from "../components/Form";
         loadTickets = () => {
             API.getTickets()
             .then(res =>
-              this.setState({ tickets: res.data, title: "", manager: "", note: ""})
+              this.setState({ tickets: res.data, title: "", manager: "Manager " + this.props.auth.user.name, note: ""})
                 )
                 .catch(err => console.log(err));
         };
@@ -58,9 +59,10 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 
     //--Render Ticket class component
         render(){
+            console.log(this.props.auth.user.name);
             
             return(
-                <div className="container">
+                <div className="container" style={{ marginTop: "4rem" }}>
                 <Container fluid>
                     <Row>
                         <Col size="md-6">
@@ -75,10 +77,10 @@ import { Input, TextArea, FormBtn } from "../components/Form";
                                 placeholder="Title (broken Oven)"
                                 />
                                 <Input
-                                value={this.state.manager}
+                                value={"Manager " + this.props.auth.user.name}
                                 onChange={this.handleInputChange}
                                 name="manager"
-                                placeholder="Manager Name (required)"
+                                disabled="true"
                                 />
                                 <TextArea
                                 value={this.state.note}
@@ -87,7 +89,7 @@ import { Input, TextArea, FormBtn } from "../components/Form";
                                 placeholder="Description"
                                 />
                                 <FormBtn
-                                disabled={!(this.state.manager && this.state.title)}
+                                disabled={!(this.state.title)}
                                 onClick={this.handleFormSubmit}
                                 >
                                     Submit Ticket
@@ -122,4 +124,12 @@ import { Input, TextArea, FormBtn } from "../components/Form";
         }
     } //--closing component tab
 
-    export default Tickets;
+    // export default Tickets;
+
+    const mapStateToProps = state => ({
+        auth: state.auth,
+        errors: state.errors
+    });
+    
+    export default connect(mapStateToProps)(Tickets);
+    
