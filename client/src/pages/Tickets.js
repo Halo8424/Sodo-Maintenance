@@ -53,7 +53,28 @@ import { connect } from 'react-redux';
                     manager: this.state.manager,
                     note: this.state.note
                 })
-                .then(res => this.loadTickets())
+                .then(res => {
+                    this.loadTickets()
+                    console.log(res);
+                    API.saveComment(res.data._id, {
+                        author: this.props.auth.user.name,
+                        body: "Ticket Created"
+                    })
+                    .then(data => {
+                        console.log(data)
+                        API.saveComment(res.data._id, {
+                            author: this.props.auth.user.name,
+                            body: "Initial Comment: " + res.data.note
+                        })
+                        .then(data => {
+                            console.log(data)
+                        })
+                        .catch(err => console.log(err))
+                    })
+                    .catch(err => console.log(err))
+
+                    
+                })
                 .catch(err => console.log(err));
             }
         };
