@@ -10,81 +10,81 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 import { connect } from 'react-redux';
 
 //--Tickets Extended Component
-    class Tickets extends Component {
+class Tickets extends Component {
     //--State
-        state={
-            tickets: [],
-            title: "",
-            manager: "Manager " + this.props.auth.user.name,
-            note: ""
-        };
+    state = {
+        tickets: [],
+        title: "",
+        manager: "Manager " + this.props.auth.user.name,
+        note: ""
+    };
 
     //--Mount Component
-        componentDidMount(){
-            this.loadTickets();
-        }
+    componentDidMount() {
+        this.loadTickets();
+    }
     //--loadTickets
-        loadTickets = () => {
-            API.getTickets()
+    loadTickets = () => {
+        API.getTickets()
             .then(res =>
-              this.setState({ tickets: res.data, title: "", manager: "Manager " + this.props.auth.user.name, note: ""})
-                )
-                .catch(err => console.log(err));
-        };
+                this.setState({ tickets: res.data, title: "", manager: "Manager " + this.props.auth.user.name, note: "" })
+            )
+            .catch(err => console.log(err));
+    };
     //--DeleteTicket
-        deleteTicket = id => {
-            API.deleteTicket(id)
+    deleteTicket = id => {
+        API.deleteTicket(id)
             .then(res => this.loadTickets())
             .catch(err => console.log(err));
-        };
+    };
     //--Handle Input Change
-        handleInputChange = event => {
-            const { name, value } = event.target;
-            this.setState({
-                [name]: value
-            });
-        };
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    };
     //--Handle the form submit event
-        handleFormSubmit = event => {
-            event.preventDefault();
-            if(this.state.title && this.state.manager){
-                API.saveTicket({
-                    title: this.state.title,
-                    manager: this.state.manager,
-                    note: this.state.note
-                })
+    handleFormSubmit = event => {
+        event.preventDefault();
+        if (this.state.title && this.state.manager) {
+            API.saveTicket({
+                title: this.state.title,
+                manager: this.state.manager,
+                note: this.state.note
+            })
                 .then(res => {
                     this.loadTickets()
                     console.log(res);
                     API.saveComment(res.data._id, {
                         author: this.props.auth.user.name,
-                        body: "Ticket Created"
+                        body: "Ticket Created By => "
                     })
-                    .then(data => {
-                        console.log(data)
-                        API.saveComment(res.data._id, {
-                            author: this.props.auth.user.name,
-                            body: "Initial Comment: " + res.data.note
-                        })
                         .then(data => {
                             console.log(data)
+                            API.saveComment(res.data._id, {
+                                author: this.props.auth.user.name,
+                                body: "Initial Comment: " + res.data.note
+                            })
+                                .then(data => {
+                                    console.log(data)
+                                })
+                                .catch(err => console.log(err))
                         })
                         .catch(err => console.log(err))
-                    })
-                    .catch(err => console.log(err))
 
-                    
+
                 })
                 .catch(err => console.log(err));
-            }
-        };
+        }
+    };
 
     //--Render Ticket class component
-        render(){
-            console.log(this.props.auth.user.name);
-            
-            return(
-                <div className="container" style={{ marginTop: "4rem" }}>
+    render() {
+        console.log(this.props.auth.user.name);
+
+        return (
+            <div className="container" style={{ marginTop: "4rem" }}>
                 <Container fluid>
                     <Row>
                         <Col size="md-6">
@@ -93,26 +93,26 @@ import { connect } from 'react-redux';
                             </Jumbotron>
                             <form>
                                 <Input
-                                value={this.state.title}
-                                onChange={this.handleInputChange}
-                                name="title"
-                                placeholder="Title (broken Oven)"
+                                    value={this.state.title}
+                                    onChange={this.handleInputChange}
+                                    name="title"
+                                    placeholder="Title (broken Oven)"
                                 />
                                 <Input
-                                value={"Manager " + this.props.auth.user.name}
-                                onChange={this.handleInputChange}
-                                name="manager"
-                                disabled="true"
+                                    value={"Manager " + this.props.auth.user.name}
+                                    onChange={this.handleInputChange}
+                                    name="manager"
+                                    disabled="true"
                                 />
                                 <TextArea
-                                value={this.state.note}
-                                onChange={this.handleInputChange}
-                                name="note"
-                                placeholder="Description"
+                                    value={this.state.note}
+                                    onChange={this.handleInputChange}
+                                    name="note"
+                                    placeholder="Description"
                                 />
                                 <FormBtn
-                                disabled={!(this.state.title)}
-                                onClick={this.handleFormSubmit}
+                                    disabled={!(this.state.title)}
+                                    onClick={this.handleFormSubmit}
                                 >
                                     Submit Ticket
                                 </FormBtn>
@@ -126,34 +126,45 @@ import { connect } from 'react-redux';
                                 <List>
                                     {this.state.tickets.map(ticket => (
                                         <ListItem key={ticket._id}>
-                                           {/* <Link to={"/tickets/" + ticket._id}> */}
-                                           <strong>
+                                            <strong>
                                                 {ticket.title} Created by {ticket.manager}
                                             </strong>
-                                           {/* </Link> */}
-                                           <DeleteBtn onClick={() => this.deleteTicket(ticket._id)} />
-                                           <UpdateBtn onClick={() => window.open("/tickets/" + ticket._id, "_self")} />
-                                          
+                                            <DeleteBtn onClick={() => this.deleteTicket(ticket._id)} />
+                                            <UpdateBtn onClick={() => {
+
+                                                API.saveComment(ticket._id, {
+                                                    author: this.props.auth.user.name,
+                                                    body: "Ticket Seen By => "
+                                                })
+                                                    .then(data => {
+                                                        console.log(data)
+                                                    })
+                                                    .catch(err => console.log(err))
+                                                window.open("/tickets/" + ticket._id, "_self")
+
+
+                                            }
+                                            } />
+
                                         </ListItem>
                                     ))}
                                 </List>
                             ) : (
-                                <h3> No Results</h3>
-                            )}
+                                    <h3> No Results</h3>
+                                )}
                         </Col>
                     </Row>
                 </Container>
-                </div>
-            );
-        }
-    } //--closing component tab
+            </div>
+        );
+    }
+} //--closing component tab
 
-    // export default Tickets;
+// export default Tickets;
 
-    const mapStateToProps = state => ({
-        auth: state.auth,
-        errors: state.errors
-    });
-    
-    export default connect(mapStateToProps)(Tickets);
-    
+const mapStateToProps = state => ({
+    auth: state.auth,
+    errors: state.errors
+});
+
+export default connect(mapStateToProps)(Tickets);
