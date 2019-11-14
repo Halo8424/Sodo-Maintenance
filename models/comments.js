@@ -6,7 +6,7 @@ var CommentsSchema = new Schema({
   author: String,
   body: String,
   date: {
-    type: Date, default:Date.now
+    type: Date, 'default': Date.now, index: true  
   }
 });
 
