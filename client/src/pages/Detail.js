@@ -7,6 +7,7 @@ import { Input, FormBtn } from "../components/Form/index";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logoutUser } from '../actions/authActions';
+var moment = require('moment');
 
 //--Detail class component
 class Detail extends Component {
@@ -18,10 +19,14 @@ class Detail extends Component {
     };
     //--Mount component
     componentDidMount() {
+        this.getTicket();
+    }
+
+    getTicket() {
         API.getTicket(this.props.match.params.id)
             .then(res => {
                 console.log(res);
-                
+
                 this.setState({ ticket: res.data })
             })
             .catch(err => console.log(err));
@@ -33,39 +38,41 @@ class Detail extends Component {
         });
     };
 
-    handleFormSubmit = event =>{
+    handleFormSubmit = event => {
         event.preventDefault();
         console.log(this.state.comment);
         const { user } = this.props.auth;
         this.setState({
             userId: user.id
         })
-        let dataComment={
+        let dataComment = {
             author: user.name,
             body: this.state.comment
         }
 
         API.saveComment(this.state.ticket._id, dataComment)
-        .then(data => {
-            console.log(data)
-            this.setState({
-                comment: ""
+            .then(data => {
+                console.log(data)
+                this.getTicket()
+                this.setState({
+                    comment: ""
+                
+                })
             })
-        })
-        .catch(err => console.log(err))
+            .catch(err => console.log(err))
 
-        
+
 
 
 
     }
 
-    
+
 
     render() {
         const { user } = this.props.auth;
         console.log(this.state.ticket._id);
-        
+
         return (
             <div className="container" style={{ marginTop: "4rem" }}>
                 <Container fluid>
@@ -86,16 +93,16 @@ class Detail extends Component {
                                         <Input
                                             name="comment"
                                             placeholder="Add Comment"
-                                            value= {this.state.comment}
+                                            value={this.state.comment}
                                             onChange={this.handleInputChange}
                                         />
                                         <FormBtn
-                                        disabled={!(this.state.comment)}
-                                        onClick={this.handleFormSubmit}
+                                            disabled={!(this.state.comment)}
+                                            onClick={this.handleFormSubmit}
                                         >
                                             Submit Comment
                                          </FormBtn>
-                                         <div style={{clear:"both"}}></div>
+                                        <div style={{ clear: "both" }}></div>
                                     </form>
                                 </div>
 
@@ -111,14 +118,14 @@ class Detail extends Component {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {this.state.ticket.comments ? this.state.ticket.comments.map(item=>(
-                                           
+                                        {this.state.ticket.comments ? this.state.ticket.comments.map(item => (
+
                                             <tr key={item._id}>
-                                                
-                                            <td>{item.date}</td>
-                                            <td>{item.body}</td>
-                                            <td>{item.author}</td>
-                                        </tr>
+
+                                                <td>{moment(item.date).format("MM-DD-YYYY h:mm a")}</td>
+                                                <td>{item.body}</td>
+                                                <td>{item.author}</td>
+                                            </tr>
                                         )) : ''}
 
                                     </tbody>
