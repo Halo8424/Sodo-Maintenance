@@ -80,7 +80,7 @@ class Tickets extends Component {
     };
 
     //--Render Ticket class component
-    render() {
+    render() { 
         console.log(this.props.auth.user.name);
 
         return (
@@ -89,7 +89,7 @@ class Tickets extends Component {
                     <Row>
                         <Col size="md-6">
                             <Jumbotron>
-                                <h1>Create New Work Ticket</h1>
+                                <h1 className="display-4">Create New Work Ticket</h1>
                             </Jumbotron>
                             <form>
                                 <Input
@@ -116,11 +116,11 @@ class Tickets extends Component {
                                 >
                                     Submit Ticket
                                 </FormBtn>
-                            </form>
+                               </form>
                         </Col>
                         <Col size="md-6 sm-12">
                             <Jumbotron>
-                                <h1>Open Tickets</h1>
+                                <h1 className="display-4">Open Tickets</h1>
                             </Jumbotron>
                             {this.state.tickets.length ? (
                                 <List>
