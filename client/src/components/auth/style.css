@@ -1,0 +1,46 @@
+body{
+    background-image: url(https://duyt4h9nfnj50.cloudfront.net/resized/1539748437430-w2880-41.jpg);
+     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.wrapper{
+    border: 2px solid white;
+    border-radius: 1rem;
+    margin-top: 150px;
+    /* background-image: url(https://duyt4h9nfnj50.cloudfront.net/resized/1539748437430-w2880-41.jpg); */
+ }
+
+ .input-field.col label{
+     font-size: 1.5rem;
+     font-weight: 700;
+     text-shadow: 1px 1px 2px black;
+     color:white;
+ }
+
+ .btn{
+     /* margin-right: 2rem; */
+ }
+
+h4{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+}
+
+.register{
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+}
+
+button{
+    width: 150px;
+    border-radius: 3px;
+    letter-spacing: 1.5px;
+    /* margin-top: 1rem; */
+    
+}
+

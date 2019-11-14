@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { loginUser } from '../../actions/authActions';
 import classnames from 'classnames';
+import './style.css';
 
 
 class Login extends Component {
@@ -52,21 +53,21 @@ class Login extends Component {
         const { errors } = this.state;
 
         return (
-            <div className="container">
+            <div className="container wrapper">
                 <div className="row" style={{ marginTop: "4rem" }}>
-                    <div className="col s8 offset-s2">
+                    <div className="col s8">
                         <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                             <h4>
-                                <b>Login</b> below
+                                <b>Login:</b> Sodo Maintenance
                             </h4>
-                            <p className="grey-text text-darken-1">
+                            <p className="register">
                                 Don't have an account? <Link to="/register">Register</Link>
                             </p>
                         </div>
                         <form noValidate onSubmit={this.onSubmit}>
                             <div className="input-field col s12">
                                 <input onChange={this.onChange} value={this.state.email} error={errors.email} name="email" type="email" className={classnames("", { invalid: errors.email || errors.emailnotfound })} />
-                                <label htmlFor="email">Email</label>
+                                <label htmlFor="email" className="white-text">Email</label>
                                 <span className="red-text">
                                     {errors.email}
                                     {errors.emailnotfound}
@@ -74,25 +75,20 @@ class Login extends Component {
                             </div>
                             <div className="input-field col s12">
                                 <input onChange={this.onChange} value={this.state.password} error={errors.password} name="password" type="password" className={classnames("", { invalid: errors.password || errors.passwordincorrect })} />
-                                <label htmlFor="password">Password</label>
+                                <label htmlFor="password" className="white-text">Password</label>
                                 <span className="red-text">
                                     {errors.password}
                                     {errors.passwordincorrect}
                                 </span>
                             </div>
                             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                                <button className="btn btn-large waves-effect waves-light hoverable blue accent-3" style={{
-                                    width: "150px",
-                                    borderRadius: "3px",
-                                    letterSpacing: "1.5px",
-                                    marginTop: "1rem"
-                                }} type="submit">
+                                <button className="btn btn-large waves-effect waves-light hoverable white accent-3" type="submit">
                                     Login
                                 </button>
                             </div>
                         </form>
                     </div>
-                </div>
+                  </div>
             </div>
         );
     }
