@@ -87,7 +87,7 @@ class Detail extends Component {
                     </Row>
                     <Row>
                         <Col size="md-10 md-offset-1">
-                            <article style={{ background: "white" }}>
+                            <article style={{ background: "white", "margin-left": "160px"}}>
                                 <div>
                                     <form>
                                         <Input
@@ -100,7 +100,7 @@ class Detail extends Component {
                                             disabled={!(this.state.comment)}
                                             onClick={this.handleFormSubmit}
                                         >
-                                            Submit Comment
+                                            Submit
                                          </FormBtn>
                                         <div style={{ clear: "both" }}></div>
                                     </form>
