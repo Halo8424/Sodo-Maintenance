@@ -87,7 +87,7 @@ class Detail extends Component {
                     </Row>
                     <Row>
                         <Col size="md-10 md-offset-1">
-                            <article>
+                            <article style={{ background: "white" }}>
                                 <div>
                                     <form>
                                         <Input
@@ -114,7 +114,7 @@ class Detail extends Component {
                                         <tr>
                                             <th>Date</th>
                                             <th>Comment</th>
-                                            <th>Added By</th>
+                                            <th>User</th>
                                         </tr>
                                     </thead>
                                     <tbody>
