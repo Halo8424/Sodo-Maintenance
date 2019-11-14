@@ -70,8 +70,8 @@ class Detail extends Component {
 
 
     render() {
-        const { user } = this.props.auth;
-        console.log(this.state.ticket._id);
+        // const { user } = this.props.auth;
+        // console.log(this.state.ticket._id);
 
         return (
             <div className="container" style={{ marginTop: "4rem" }}>
