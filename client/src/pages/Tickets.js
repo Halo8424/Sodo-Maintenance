@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import DeleteBtn from "../components/DeleteBtn";
+import UpdateBtn from "../components/UpdateBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
@@ -104,12 +105,14 @@ import { connect } from 'react-redux';
                                 <List>
                                     {this.state.tickets.map(ticket => (
                                         <ListItem key={ticket._id}>
-                                           <Link to={"/tickets/" + ticket._id}>
+                                           {/* <Link to={"/tickets/" + ticket._id}> */}
                                            <strong>
                                                 {ticket.title} Created by {ticket.manager}
                                             </strong>
-                                           </Link>
+                                           {/* </Link> */}
                                            <DeleteBtn onClick={() => this.deleteTicket(ticket._id)} />
+                                           <UpdateBtn onClick={() => window.open("/tickets/" + ticket._id, "_self")} />
+                                          
                                         </ListItem>
                                     ))}
                                 </List>

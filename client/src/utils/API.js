@@ -16,5 +16,8 @@ export default {
   // Saves a ticket to the database
   saveTicket: function(ticketData) {
     return axios.post("/api/tickets", ticketData);
+  },
+  saveComment: function(id, data) {
+    return axios.post("/api/comments/" + id, data);
   }
 }; 

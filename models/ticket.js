@@ -7,7 +7,14 @@
         title: { type: String, required: true},
         manager: { type: String, required: true},
         note: String,
-        date: { type: Date, default: Date.now}
+        date: { type: Date, default: Date.now},
+        comments: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "Comments"
+            }
+        ]
+
     });
 
     const Ticket = mongoose.model("Ticket", ticketSchema);
