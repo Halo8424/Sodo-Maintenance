@@ -59,13 +59,13 @@ class Tickets extends Component {
                     console.log(res);
                     API.saveComment(res.data._id, {
                         author: this.props.auth.user.name,
-                        body: "Ticket Created By => "
+                        body: "Ticket Created By"
                     })
                         .then(data => {
                             console.log(data)
                             API.saveComment(res.data._id, {
                                 author: this.props.auth.user.name,
-                                body: "Initial Comment: " + res.data.note
+                                body: "Initial Note: " + res.data.note
                             })
                                 .then(data => {
                                     console.log(data)
@@ -137,7 +137,7 @@ class Tickets extends Component {
 
                                                 API.saveComment(ticket._id, {
                                                     author: this.props.auth.user.name,
-                                                    body: "Ticket Seen By => "
+                                                    body: "Ticket Viewed By"
                                                 })
                                                     .then(data => {
                                                         console.log(data)
