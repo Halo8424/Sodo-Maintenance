@@ -1,0 +1,40 @@
+.jumbotron{
+background: rgb(178,61,124);
+background: radial-gradient(circle, rgb(221, 90, 160) 0%, rgba(226,124,190,0.94) 100%);
+/* box-shadow: 5px 10px 18px rgb(202, 79, 53); */
+box-shadow: 5px 15px 22px rgb(119, 43, 129);
+opacity: 0.8;
+}
+
+/* Ticket Notes Render */
+article{
+    
+    border: 1px solid black;
+    border-radius: 1rem;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 5px 15px 22px rgb(119, 43, 129);
+}
+
+
+.display-4{
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    text-align: center;  
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;  
+ }
+ 
+ :-ms-input-placeholder {  
+    text-align: center; 
+ }

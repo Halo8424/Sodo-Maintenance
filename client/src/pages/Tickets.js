@@ -8,6 +8,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import { connect } from 'react-redux';
+import './style.css';
 
 //--Tickets Extended Component
 class Tickets extends Component {
@@ -58,13 +59,13 @@ class Tickets extends Component {
                     console.log(res);
                     API.saveComment(res.data._id, {
                         author: this.props.auth.user.name,
-                        body: "Ticket Created By => "
+                        body: "Ticket Created By"
                     })
                         .then(data => {
                             console.log(data)
                             API.saveComment(res.data._id, {
                                 author: this.props.auth.user.name,
-                                body: "Initial Comment: " + res.data.note
+                                body: "Initial Note: " + res.data.note
                             })
                                 .then(data => {
                                     console.log(data)
@@ -80,7 +81,7 @@ class Tickets extends Component {
     };
 
     //--Render Ticket class component
-    render() {
+    render() { 
         console.log(this.props.auth.user.name);
 
         return (
@@ -89,7 +90,7 @@ class Tickets extends Component {
                     <Row>
                         <Col size="md-6">
                             <Jumbotron>
-                                <h1>Create New Work Ticket</h1>
+                                <h1 className="display-4">Create New Work Ticket</h1>
                             </Jumbotron>
                             <form>
                                 <Input
@@ -97,6 +98,7 @@ class Tickets extends Component {
                                     onChange={this.handleInputChange}
                                     name="title"
                                     placeholder="Title (broken Oven)"
+                                    style={{backgroundColor: "white"}}
                                 />
                                 <Input
                                     value={"Manager " + this.props.auth.user.name}
@@ -109,6 +111,7 @@ class Tickets extends Component {
                                     onChange={this.handleInputChange}
                                     name="note"
                                     placeholder="Description"
+                                    style={{border: "1px solid black"}}
                                 />
                                 <FormBtn
                                     disabled={!(this.state.title)}
@@ -116,11 +119,11 @@ class Tickets extends Component {
                                 >
                                     Submit Ticket
                                 </FormBtn>
-                            </form>
+                               </form>
                         </Col>
                         <Col size="md-6 sm-12">
                             <Jumbotron>
-                                <h1>Open Tickets</h1>
+                                <h1 className="display-4">Open Tickets</h1>
                             </Jumbotron>
                             {this.state.tickets.length ? (
                                 <List>
@@ -134,7 +137,7 @@ class Tickets extends Component {
 
                                                 API.saveComment(ticket._id, {
                                                     author: this.props.auth.user.name,
-                                                    body: "Ticket Seen By => "
+                                                    body: "Ticket Viewed By"
                                                 })
                                                     .then(data => {
                                                         console.log(data)

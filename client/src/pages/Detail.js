@@ -7,6 +7,7 @@ import { Input, FormBtn } from "../components/Form/index";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logoutUser } from '../actions/authActions';
+import './style.css';
 var moment = require('moment');
 
 //--Detail class component
@@ -79,7 +80,7 @@ class Detail extends Component {
                     <Row>
                         <Col size="md-12">
                             <Jumbotron>
-                                <h1>
+                                <h1 className="display-4">
                                     {this.state.ticket.title} Created by {this.state.ticket.manager}
                                 </h1>
                             </Jumbotron>
@@ -92,22 +93,23 @@ class Detail extends Component {
                                     <form>
                                         <Input
                                             name="comment"
-                                            placeholder="Add Comment"
+                                            placeholder="Add Notes"
                                             value={this.state.comment}
                                             onChange={this.handleInputChange}
+                                            style={{}}
                                         />
                                         <FormBtn
                                             disabled={!(this.state.comment)}
                                             onClick={this.handleFormSubmit}
                                         >
-                                            Submit
+                                            Add Note
                                          </FormBtn>
                                         <div style={{ clear: "both" }}></div>
                                     </form>
                                 </div>
 
-
-                                <h4>Notes</h4>
+                                <Link to="/">Back to Open Tickets</Link>
+                                <h4 style={{textAlign: "center"}}>Ticket Notes</h4>
 
                                 <table>
                                     <thead>
@@ -122,7 +124,7 @@ class Detail extends Component {
 
                                             <tr key={item._id}>
 
-                                                <td>{moment(item.date).format("MM-DD-YYYY h:mm a")}</td>
+                                                <td>{moment(item.date).format("MMM-Do-YYYY h:mm a")}</td>
                                                 <td>{item.body}</td>
                                                 <td>{item.author}</td>
                                             </tr>
@@ -134,11 +136,11 @@ class Detail extends Component {
                             </article>
                         </Col>
                     </Row>
-                    <Row>
+                    {/* <Row>
                         <Col size="md-2">
                             <Link to="/">Back to Open Tickets</Link>
                         </Col>
-                    </Row>
+                    </Row> */}
                 </Container>
             </div>
         );
