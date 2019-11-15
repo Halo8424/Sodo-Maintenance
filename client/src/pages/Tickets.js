@@ -8,6 +8,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import { connect } from 'react-redux';
+import './style.css';
 
 //--Tickets Extended Component
 class Tickets extends Component {
