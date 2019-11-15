@@ -3,7 +3,6 @@ import DeleteBtn from "../components/DeleteBtn";
 import UpdateBtn from "../components/UpdateBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-// import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
@@ -125,6 +124,7 @@ class Tickets extends Component {
                             <Jumbotron>
                                 <h1 className="display-4">Open Tickets</h1>
                             </Jumbotron>
+
                             {this.state.tickets.length ? (
                                 <List>
                                     {this.state.tickets.map(ticket => (
@@ -141,9 +141,10 @@ class Tickets extends Component {
                                                 })
                                                     .then(data => {
                                                         console.log(data)
+                                                        window.open("/tickets/" + ticket._id, "_self")
                                                     })
                                                     .catch(err => console.log(err))
-                                                window.open("/tickets/" + ticket._id, "_self")
+                                               
 
 
                                             }
@@ -161,9 +162,7 @@ class Tickets extends Component {
             </div>
         );
     }
-} //--closing component tab
-
-// export default Tickets;
+} 
 
 const mapStateToProps = state => ({
     auth: state.auth,

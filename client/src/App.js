@@ -16,7 +16,6 @@ import PrivateRoute from './components/private-route/PrivateRoute';
 
 import Tickets from "./pages/Tickets";
 import Detail from "./pages/Detail";
-import NoMatch from "./pages/NoMatch";
 
 if (localStorage.jwtToken) {
     const token = localStorage.jwtToken;
@@ -50,7 +49,7 @@ class App extends Component {
                             <PrivateRoute exact path="/dashboard" component={Tickets} />
                             <PrivateRoute exact path="/tickets" component={Tickets} />
                             <PrivateRoute exact path="/tickets/:id" component={Detail} />
-                            <PrivateRoute component={NoMatch} />
+                            <PrivateRoute component={Tickets} />
                         </Switch>
                     </div>
                 </Router>
