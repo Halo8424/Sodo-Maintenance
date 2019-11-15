@@ -1,6 +1,6 @@
 nav {
     background-color: transparent;
-    
+    padding-top: 20px;
 }
 
 .nav-link{
@@ -8,6 +8,7 @@ nav {
     font-size: 40px;
     text-shadow: 3px 2px 3px black;
     letter-spacing: 3px;
+    color: white;
 }
 
 
