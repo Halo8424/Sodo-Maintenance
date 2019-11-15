@@ -89,12 +89,12 @@ class Tickets extends Component {
                     <Row>
                         <Col size="md-6">
                             <Jumbotron>
-                                <h1 className="display-4">Create New Ticket</h1>
+                                <h1 className="display-4" style={{ "font-family": 'Anton', "font-size": "40px", "text-shadow": "3px 2px 3px black", "letter-spacing": "3px", marginTop: "40px" }}>Create New Ticket</h1>
                             </Jumbotron>
                             <form>
                                 <Input
                                     value={this.state.title}
-                                    onChange={this.handleInputChange}
+                                    onChange={this.handleInputChange} 
                                     name="title"
                                     placeholder="Title (broken Oven)"
                                     style={{backgroundColor: "white"}}
@@ -122,7 +122,7 @@ class Tickets extends Component {
                         </Col>
                         <Col size="md-6 sm-12">
                             <Jumbotron>
-                                <h1 className="display-4">Open Tickets</h1>
+                                <h1 className="display-4" style={{ "font-family": 'Anton', "font-size": "40px", "text-shadow": "3px 2px 3px black", "letter-spacing": "3px", marginTop: "40px" }}>Open Tickets</h1>
                             </Jumbotron>
 
                             {this.state.tickets.length ? (
