@@ -89,7 +89,7 @@ class Tickets extends Component {
                     <Row>
                         <Col size="md-6">
                             <Jumbotron>
-                                <h1 className="display-4">Create New Work Ticket</h1>
+                                <h1 className="display-4">Create New Ticket</h1>
                             </Jumbotron>
                             <form>
                                 <Input

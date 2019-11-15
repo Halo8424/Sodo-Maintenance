@@ -4,9 +4,10 @@ nav {
 }
 
 .nav-link{
-    /* font-size: 24px; */
-    font-size: 30px;
-    text-shadow: 1px 1px 2px black;
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    text-shadow: 3px 2px 3px black;
+    letter-spacing: 3px;
 }
 
 
