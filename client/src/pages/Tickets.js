@@ -98,6 +98,7 @@ class Tickets extends Component {
                                     onChange={this.handleInputChange}
                                     name="title"
                                     placeholder="Title (broken Oven)"
+                                    style={{backgroundColor: "white"}}
                                 />
                                 <Input
                                     value={"Manager " + this.props.auth.user.name}

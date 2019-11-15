@@ -6,8 +6,29 @@ box-shadow: 5px 15px 22px rgb(119, 43, 129);
 opacity: 0.8;
 }
 
+/* Ticket Notes Render */
+article{
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 .display-4{
     color: white;
     text-shadow: 1px 1px 2px black;
 }
 
+::-webkit-input-placeholder {
+    text-align: center;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    text-align: center;  
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;  
+ }
+ 
+ :-ms-input-placeholder {  
+    text-align: center; 
+ }
