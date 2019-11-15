@@ -22,7 +22,7 @@ class Navbar extends Component {
 
                 <nav className="z-depth-0">
                     <div className="nav-wrapper" style={{ display: "flex", justifyContent: "space-between" }}>
-                        <Link to="/login" className="col s5 white-text nav-link" style={{ fontFamily: "monospace" }}>
+                        <Link to="/login" className="col s5 white-text nav-link">
                         SoDo Maintenance Tickets
                             </Link>
 

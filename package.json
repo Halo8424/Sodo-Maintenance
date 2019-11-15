@@ -1,7 +1,7 @@
 {
-  "name": "disneyunitedway-mern",
+  "name": "Final-proyect",
   "version": "1.0.0",
-  "description": "Disney United Way Cast Donation Portal",
+  "description": "Final Proyect UCF Cooding Bootcamp",
   "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
