@@ -1,4 +1,4 @@
 module.exports = {
-    mongoURI: "mongodb://localhost:27017/sodo_db",
+    mongoURI: process.env.MONGODB_URI || "mongodb://localhost/sodo_db",
     cypher: "blahblah"
 };
