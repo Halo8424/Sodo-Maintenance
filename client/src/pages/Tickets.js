@@ -110,6 +110,7 @@ class Tickets extends Component {
                                     onChange={this.handleInputChange}
                                     name="note"
                                     placeholder="Description"
+                                    style={{border: "1px solid black"}}
                                 />
                                 <FormBtn
                                     disabled={!(this.state.title)}

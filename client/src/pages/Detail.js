@@ -79,7 +79,7 @@ class Detail extends Component {
                     <Row>
                         <Col size="md-12">
                             <Jumbotron>
-                                <h1>
+                                <h1 className="display-4">
                                     {this.state.ticket.title} Created by {this.state.ticket.manager}
                                 </h1>
                             </Jumbotron>
