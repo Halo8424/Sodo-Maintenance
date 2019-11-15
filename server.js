@@ -13,6 +13,7 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 //app.use(routes);
+if (process.env.NODE_ENV === "production") {app.use(express.static("client/build"));} 
 
 const db = require("./config/keys").mongoURI;
 mongoose.connect(db, { useNewUrlParser: true }).then(() => console.log("MongoDB connected")).catch((err) => console.log(err));
@@ -22,6 +23,8 @@ require('./config/passport')(passport);
 
 app.use('/api/users', users);
 app.use(routes);
+
+app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
 
 
 app.listen(port, () => {
