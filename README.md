@@ -37,7 +37,7 @@ Sodo Maintenance Tickets (SMT) Allows A Company To Efficiently Track Their In-Ho
 
 * Managers Can Easily Communicate By Adding Notes To The Ticket In The Add Notes Section. And Submit The Note By Clicking The Add Note Button. 
 
-* <img src="image/Ticket details page:Note:add Note.png">
+<img src="image/Ticket details page:Note:add Note.png">
 
 * The Added Note Is Immediately Displayed In The Notes Section.
 
