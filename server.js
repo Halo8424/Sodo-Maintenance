@@ -27,7 +27,7 @@ app.use(routes);
 
 app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
 
-
+// Set Port to listen
 app.listen(port, () => {
     console.log(`Server is listening at http://localhost:${port}`);
 });
