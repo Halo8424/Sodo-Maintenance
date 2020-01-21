@@ -1,7 +1,8 @@
 # SoDo Maintenance Tickets
 
 ### Overview
-Sodo Maintenance Tickets (SMT) Allows A Company To Efficiently Track Their In-House Maintenance Issues, Without Having to Resort To Long E-mail Communications Threads. SMT Provides A Secure Area To Handle All of your Maintenance Communication Needs, Ensuring Your Team Is Set Up For Success.  So You Can Continue To Focus On Growing Your Business And Serving Your Customers.  Link to Deployed Site https://sodo-maintenance.herokuapp.com/login
+Sodo Maintenance Tickets (SMT) Allows A Company To Efficiently Track Their In-House Maintenance Issues, Without Having to Resort To Long E-mail Communications Threads. SMT Provides A Secure Area To Handle All of your Maintenance Communication Needs, Ensuring Your Team Is Set Up For Success.  So You Can Continue To Focus On Growing Your Business And Serving Your Customers.  
+* Link to Deployed Site https://sodo-maintenance.herokuapp.com/login
   
 
 ## Running Application
